@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "inputs": [
+    {
+      "id": "envFile",
+      "type": "pickString",
+      "description": "Choose the configuration file to load",
+      "options": [
+        ".env",
+        ".env.local",
+        ".env.develop",
+        ".env.development",
+        ".env.prod",
+        ".env.production",
+        ".env.staging",
+        ".env.tmpl"
+      ],
+      "default": ".env"
+    }
+  ]
+}

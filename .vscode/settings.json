@@ -1,0 +1,24 @@
+{
+  "search.exclude": {
+    "pnpm-lock.yaml": false // avoid polluting search results with lockfile content
+  },
+  "eslint.packageManager": "pnpm", // ensure vscode uses pnpm instead of npmv
+  "npm.packageManager": "pnpm",
+  "explorer.fileNesting.patterns": {
+    "package.json": "pnpm-workspace.yaml, pnpm-lock.yaml" // for those using file-nesting
+  },
+  "cSpell.words": [
+  ],
+  "cSpell.ignorePaths": [
+    "package.json",
+    "package-lock.json",
+    "**/node_modules/*",
+    "**/.git/*",
+    "**/.vscode/*"
+  ],
+  "cSpell.ignoreWords": [
+  ],
+  "conventionalCommits.scopes": [
+    "frontend"
+  ]
+}
