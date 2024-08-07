@@ -27,7 +27,6 @@ class EventController extends Controller
         return Validator::make($request->all(), [
             'date' => 'required|date',
             'hour' => 'required|integer|max:23',
-            'duration' => 'required|integer|max:23',
             'userFirst' => 'required',
             'userSecond' => 'required',
         ]);
@@ -65,7 +64,6 @@ class EventController extends Controller
         $event = Event::create([
             'date' => $validated['date'],
             'hour' => $validated['hour'],
-            'duration' => $validated['duration'],
             'users' => [
                 'first' => $validated['userFirst'],
                 'second' => $validated['userSecond'],
@@ -93,7 +91,6 @@ class EventController extends Controller
         $event->update([
             'date' => $validated['date'],
             'hour' => $validated['hour'],
-            'duration' => $validated['duration'],
             'users' => [
                 'first' => $validated['userFirst'],
                 'second' => $validated['userSecond'],

@@ -16,7 +16,6 @@ return new class extends Migration
             $table->json('users');
             $table->timestamp('date');
             $table->tinyInteger('hour');
-            $table->tinyInteger('duration');
             $table->timestamps();
             $table->softDeletes();
         });

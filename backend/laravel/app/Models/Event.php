@@ -18,7 +18,6 @@ class Event extends Model
         'users',
         'date',
         'hour',
-        'duration',
         'users->first',
         'users->second',
     ];
