@@ -16,15 +16,16 @@ const meta = {
     currentDate: { control: 'date' },
     onDateChange: { action: 'date changed' },
   },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { 
-    currentDate: new Date(),
-    onDateChange: fn()
-   },
 } satisfies Meta<typeof DateChanges>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 
-export const DateChangesButtons: Story = {};
+export const DateChangesButtons: Story = {
+  args: {
+    currentDate: new Date(),
+    onDateChange: fn(),
+    showDays: 7
+  }
+};

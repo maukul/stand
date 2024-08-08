@@ -1,34 +1,33 @@
 import { Button } from "@/shared/ui/vendor";
+import { addDays, subDays } from "date-fns";
 
 type DateChangesProps = {
     currentDate: Date;
     onDateChange: (date: Date) => void;
+    showDays: number;
 }
 
-export const DateChanges = ({ currentDate, onDateChange }: DateChangesProps) => {
+export const DateChanges = ({ currentDate, onDateChange, showDays }: DateChangesProps) => {
     const handleChange = (date: Date) => {
         onDateChange(date);
     };
+    const tik = (showDays - 1) ;
 
     const handleBeforeWeek = () => {
-        const date = new Date(currentDate);
-        date.setDate(date.getDate() - 7);
+        const date = subDays(currentDate, tik)
         handleChange(date);
     }
     const handleBeforeDay = () => {
-        const date = new Date(currentDate);
-        date.setDate(date.getDate() - 1);
+        const date = subDays(currentDate, 1)
         handleChange(date);
     }
     const handleToday = () => handleChange(new Date());
     const handleNextWeek = () => {
-        const date = new Date(currentDate);
-        date.setDate(date.getDate() + 7);
+        const date = addDays(currentDate, tik)
         handleChange(date);
     }
     const handleNextDay = () => {
-        const date = new Date(currentDate);
-        date.setDate(date.getDate() + 1);
+        const date = addDays(currentDate, 1)
         handleChange(date);
     }
     return (
