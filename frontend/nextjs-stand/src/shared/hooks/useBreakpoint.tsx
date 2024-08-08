@@ -6,6 +6,8 @@ const breakpoints = {
     lg: 1024,
     xl: 1280,
     "2xl": 1400
-}
+} as const
 
-export const useBreakpoint = createBreakpoint(breakpoints);
+type useBreakpointType = () => keyof typeof breakpoints
+
+export const useBreakpoint = createBreakpoint(breakpoints) as useBreakpointType;
