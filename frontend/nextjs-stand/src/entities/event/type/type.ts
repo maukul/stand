@@ -17,5 +17,5 @@ export type Event = {
 
 export type EventGroupDate = {
     date: Date;
-    events: Event[];
+    events: Array<Event | EventEmpty>;
 }

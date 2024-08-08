@@ -17,7 +17,7 @@ export const mockEventsGroup = ({seedValue}: MockEventsGroupParams = {}): EventG
 
     for (const date of eachDayOfInterval({start: startDate, end: endDate})) {
         const events = [];
-        for (let i = 8; i < rand([9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]); i++) {
+        for (let i = 8; i < rand([9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]); i++) {
             events.push({
                 id: incrementalNumber()(),
                 date: date.toString(),
